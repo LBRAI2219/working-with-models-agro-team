@@ -1,0 +1,193 @@
+%========================================================================
+% Automatically generated
+% Modify this file to describe root-soil interactions
+%========================================================================
+
+p = cell(4,1);
+
+%-----------------------------------------
+% Tap root
+%-----------------------------------------
+
+% Parameters editable by the GUI [mean, sd]
+p{1}.r = [8, 0]; % Initial elongation rate (cm/day)
+p{1}.a = [0.1, 0]; % Root radius (cm)  
+p{1}.lb = [0.1, 0]; % Length of basal zone (cm)        
+p{1}.la = [5, 0]; % Length of apical zone (cm)                    
+p{1}.ln = [0.5, 0]; % Length between laterals (cm)
+p{1}.nob = [10, 0]; % Maximal number of laterals (1)
+
+% Additional parameters (predefined values, not altered by GUI)
+p{1}.name = 'Tap root'; % Name of the root type
+p{1}.color = [0.5, 0, 0]; % Color of the root (rgb)
+type = 1; % Type of tropism (0 plagio-, 1 gravi-, 2 exo-, 3 chemo-/hydrotropism)
+N = 1.5; % Strength of tropism
+sigma = 0.1; % Expected change of root tip heading (rad/cm)
+p{1}.tropism = [type, N, sigma]; % Root tropism
+p{1}.dx = 0.25; % Spatial resolution along root axis (cm)
+p{1}.rlt = [Inf, 0]; % Maximal root life time [mean, std] (days)
+p{1}.gf = 1; % Type of growth function (1: negative exponential, 2: linear)
+
+% Preset by GUI 
+p{1}.theta = [0, 0]; % Insertion angle(rad)
+p{1}.successor = [2, 1]; % Laterals [type,probability;type,probability;...]
+p{1}.sef = @(x) 1; % Scale root elongation funcntion
+p{1}.sbpf = @(x) 1; % Scale lateral branching probability function
+p{1}.saf = @(x) 1; % Scale lateral branching angle function
+
+%-----------------------------------------
+% Laterals 
+%-----------------------------------------
+
+% Parameters editable by the GUI [mean, sd]
+p{2}.r = [5, 0]; % Initial elongation rate (cm/day)
+p{2}.a = [0.1, 0]; % Root radius (cm)  
+p{2}.theta = [1.22173, 0]; % Insertion angle (rad)
+p{2}.lb = [1, 0]; % Length of basal zone (cm)        
+p{2}.la = [1, 0]; % Length of apical zone (cm)                    
+p{2}.ln = [1, 0]; % Length between laterals (cm)
+p{2}.nob = [10, 0]; % Maximal number of laterals (1)
+
+% Additional parameters (predefined values)
+p{2}.name = 'Lateral'; % Name of the root type
+p{2}.color = [0, 1, 0]; % Color of the root (rgb)
+type = 1; % Type of tropism (0 plagio-, 1 gravi-, 2 exo-, 3 chemo-/hydrotropism)
+N = 1; % Strength of tropism
+sigma = 0.3; % Expected change of root tip heading (rad/cm)
+p{2}.tropism = [type, N, sigma]; % Root tropism
+p{2}.dx = 0.25; % Spatial resolution along root axis (cm)
+p{2}.rlt = [Inf, 0]; % Maximal root life time [mean, std] (days)
+p{2}.gf = 1; % Type of growth function (1: negative exponential, 2: linear)
+
+% Preset by GUI 
+p{2}.successor = [3, 1]; % Laterals [type,probability;type,probability;...]
+p{2}.sef = @(x) 1; % Scale root elongation funcntion
+p{2}.sbpf = @(x) 1; % Scale lateral branching probability function
+p{2}.saf = @(x) 1; % Scale lateral branching angle function
+
+%-----------------------------------------
+% Second order laterals
+%-----------------------------------------
+
+% Parameters editable by the GUI
+p{3}.r = [8, 0]; % Initial elongation rate (cm/day)
+p{3}.a = [0.07, 0]; % Root radius (cm)  
+p{3}.theta = [1.22173, 0]; % Insertion angle (rad)
+p{3}.la = [2, 0]; % Length of root (cm)                    
+
+% Additional parameters (predefined values)
+p{3}.lb = [0, 0]; % Length of basal zone (cm)        
+p{3}.ln = [0, 0]; % Length between laterals (cm)
+p{3}.nob = [0, 0]; % Maximal number of laterals (1)
+p{3}.name = 'Second order lateral'; % Name of the root type
+p{3}.color = [0.5, 0.5, 0]; % Color of the root (rgb)
+type = 1; % Type of tropism (0 plagio-, 1 gravi-, 2 exo-, 3 chemo-/hydrotropism)
+N = 0; % Strength of tropism
+sigma = 0.4; % Expected change of root tip heading (rad/cm)
+p{3}.tropism = [type, N, sigma]; % Root tropism
+p{3}.dx = 0.25; % Spatial resolution along root axis (cm)
+p{3}.rlt = [Inf, 0]; % Maximal root life time [mean, std] (days)
+p{3}.gf = 1; % Type of growth function (1: negative exponential, 2: linear)
+
+% Preset by GUI 
+p{3}.successor = [3, 1]; % Laterals [type,probability;type,probability;...]
+p{3}.sef = @(x) 1; % Scale root elongation funcntion
+p{3}.sbpf = @(x) 1; % Scale lateral branching probability function
+p{3}.saf = @(x) 1; % Scale lateral branching angle function
+
+% -----------------------------------------
+% Basal roots
+% -----------------------------------------
+
+% Parameters editable by the GUI [mean, sd]
+p{4}.r = [0.1, 0]; % Initial elongation rate (cm/day)
+p{4}.a = [0.03, 0]; % Root radius (cm)  
+p{4}.theta = [1.3942845, 0]; % Insertion angle (rad)
+p{4}.lb = [0, 0]; % Length of basal zone (cm)        
+p{4}.la = [2, 0]; % Length of apical zone (cm)                    
+p{4}.ln = [0, 0]; % Length between laterals (cm)
+p{4}.nob = [10, 0]; % Maximal number of laterals (1)
+
+% Additional parameters (predefined values)
+p{4}.name = 'Basal root'; % Name of the root type
+p{4}.color = [0.5, 0, 0.5]; % Color of the root (rgb)
+type = 1; % Type of tropism (0 plagio-, 1 gravi-, 2 exo-, 3 chemo-/hydrotropism)
+N = 1; % Strength of tropism
+sigma = 0.2; % Expected change of root tip heading (rad/cm)
+p{4}.tropism = [type, N, sigma]; % Root tropism
+p{4}.dx = 0.25; % Spatial resolution along root axis (cm)
+p{4}.rlt = [Inf, 0]; % Maximal root life time [mean, std] (days)
+p{4}.gf = 1; % Type of growth function (1: negative exponential, 2: linear)
+
+% Preset by GUI 
+p{4}.successor = [2, 1]; % Laterals [type,probability;type,probability;...]
+p{4}.sef = @(x) 1; % Scale root elongation funcntion
+p{4}.sbpf = @(x) 1; % Scale lateral branching probability function
+p{4}.saf = @(x) 1; % Scale lateral branching angle function
+
+%-----------------------------------------
+% Dicot plant data (editable by the GUI)
+%-----------------------------------------
+
+plantingdepth = 10; % (cm)
+basal_first = [1, 0]; % First occurence [mean, std] (days)
+basal_delay = [1, 0]; % Interim time [mean, std] (days)
+basal_max = 100; % Maximal number of basal roots (1)
+
+%-----------------------------------------
+% Simulation
+%-----------------------------------------
+
+% Parameters (editable by the GUI)
+simtime = 50;  % simulation time (days)
+dt = 50; % temporal resolution, simtime/(intermediate+1) (days) 
+
+% Initialize
+p = completeParameters(p); % it is possible to add a container geometry, see completeParameters  
+set(0,'RecursionLimit',5000); % sometimes needed
+str = createDicotRS(plantingdepth,basal_first,basal_delay,basal_max); % create initial string
+N = round(simtime/dt); % number of iterations
+
+% Run simulation
+for i = 1 : N
+
+    str = applyRules(str,dt); % l-system string representing the root system
+
+    %------------------------------------------------------------
+    % execute soil model 
+    % dependent on the root system (str) at simulation time i*dt
+    % see also: getDensity, getSegments, getTotal
+    %------------------------------------------------------------
+               
+    %
+    % plant soil interaction takes place using global variables
+    %
+    % 1. Root tropism (global variables X,Y,Z,C)
+    % 2. Scale root elongation (function handle sef)
+    % 3. Scale root branching probability (function handle sbpf)
+    % 4. Scale insertion angle (function handle saf)
+    %
+    
+    res{i} = str; % save intermediate results
+
+end
+
+%-----------------------------------------
+% Visualisation
+%-----------------------------------------
+
+figure;
+plotTubes(res{end});
+
+% %-----------------------------------------
+% % Example evaluation (uncomment and run)
+% %-----------------------------------------
+%
+% v = zeros();
+% for i = 1 : N
+%     v(i) = getTotal(res{i},'l'); % or 's' for surface, see getTotal
+% end
+% figure;
+% plot((1:N).*dt,v);
+% xlabel('Time (days)');
+% ylabel('Root system length (cm)'); 
